@@ -1,0 +1,14 @@
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\bin\Debug\BSE.Windows.Forms.exe.config
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\bin\Debug\BSE.Windows.Forms.exe
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\bin\Debug\BSE.Windows.Forms.pdb
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.csproj.AssemblyReference.cache
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.csproj.SuggestedBindingRedirects.cache
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.Properties.Resources.resources
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.csproj.GenerateResource.cache
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.csproj.CoreCompileInputs.cache
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.exe
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.pdb
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.Panel.resources
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.XPanderPanel.resources
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.XPanderPanelList.resources
+C:\Users\jjins\Documents\1. Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.Resources.Resources.resources
