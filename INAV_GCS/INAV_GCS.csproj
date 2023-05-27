@@ -69,6 +69,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
@@ -124,6 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BSE.Windows.Forms\BSE.Windows.Forms.csproj">
+      <Project>{9CA367B8-0B98-49D1-84FB-735E612E3BA9}</Project>
+      <Name>BSE.Windows.Forms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
