@@ -33,26 +33,26 @@
             this.panel1 = new BSE.Windows.Forms.Panel();
             this.xPanderPanelList1 = new BSE.Windows.Forms.XPanderPanelList();
             this.xPanderPanel1 = new BSE.Windows.Forms.XPanderPanel();
-            this.xPanderPanel2 = new BSE.Windows.Forms.XPanderPanel();
-            this.xPanderPanel3 = new BSE.Windows.Forms.XPanderPanel();
-            this.comboBox_port = new System.Windows.Forms.ComboBox();
-            this.label_port = new System.Windows.Forms.Label();
-            this.button_connect = new System.Windows.Forms.Button();
-            this.button_disconnect = new System.Windows.Forms.Button();
-            this.label_receive = new System.Windows.Forms.Label();
-            this.textBox_send = new System.Windows.Forms.TextBox();
-            this.button_send = new System.Windows.Forms.Button();
-            this.label_send = new System.Windows.Forms.Label();
-            this.label_status = new System.Windows.Forms.Label();
-            this.TextBox_received = new System.Windows.Forms.TextBox();
             this.TextBox_received_hex = new System.Windows.Forms.TextBox();
+            this.TextBox_received = new System.Windows.Forms.TextBox();
+            this.textBox_send = new System.Windows.Forms.TextBox();
+            this.label_receive = new System.Windows.Forms.Label();
+            this.button_send = new System.Windows.Forms.Button();
+            this.label_status = new System.Windows.Forms.Label();
+            this.label_send = new System.Windows.Forms.Label();
+            this.button_disconnect = new System.Windows.Forms.Button();
+            this.comboBox_port = new System.Windows.Forms.ComboBox();
+            this.button_connect = new System.Windows.Forms.Button();
+            this.label_port = new System.Windows.Forms.Label();
+            this.xPanderPanel2 = new BSE.Windows.Forms.XPanderPanel();
+            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
+            this.xPanderPanel3 = new BSE.Windows.Forms.XPanderPanel();
             this.textLng = new System.Windows.Forms.TextBox();
             this.textLat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLoadIntoMap = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.map = new GMap.NET.WindowsForms.GMapControl();
-            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.panel1.SuspendLayout();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel1.SuspendLayout();
@@ -80,14 +80,15 @@
             this.panel1.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.panel1.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Image = null;
-            this.panel1.Location = new System.Drawing.Point(0, 364);
+            this.panel1.Location = new System.Drawing.Point(0, 332);
             this.panel1.MinimumSize = new System.Drawing.Size(27, 27);
             this.panel1.Name = "panel1";
+            this.panel1.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
             this.panel1.ShowCloseIcon = true;
             this.panel1.ShowExpandIcon = true;
-            this.panel1.ShowXPanderPanelProfessionalStyle = true;
-            this.panel1.Size = new System.Drawing.Size(1197, 282);
+            this.panel1.Size = new System.Drawing.Size(1197, 314);
             this.panel1.TabIndex = 1;
             this.panel1.Text = "Menu";
             this.panel1.ToolTipTextCloseIcon = null;
@@ -96,7 +97,8 @@
             // 
             // xPanderPanelList1
             // 
-            this.xPanderPanelList1.CaptionStyle = BSE.Windows.Forms.CaptionStyle.Normal;
+            this.xPanderPanelList1.CaptionStyle = BSE.Windows.Forms.CaptionStyle.Flat;
+            this.xPanderPanelList1.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel1);
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel2);
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel3);
@@ -106,13 +108,14 @@
             this.xPanderPanelList1.Name = "xPanderPanelList1";
             this.xPanderPanelList1.PanelColors = null;
             this.xPanderPanelList1.ShowExpandIcon = true;
-            this.xPanderPanelList1.Size = new System.Drawing.Size(1197, 253);
+            this.xPanderPanelList1.Size = new System.Drawing.Size(1197, 285);
             this.xPanderPanelList1.TabIndex = 0;
             this.xPanderPanelList1.Text = "xPanderPanelList1";
             // 
             // xPanderPanel1
             // 
             this.xPanderPanel1.CaptionFont = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel1.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel1.Controls.Add(this.TextBox_received_hex);
             this.xPanderPanel1.Controls.Add(this.TextBox_received);
             this.xPanderPanel1.Controls.Add(this.textBox_send);
@@ -145,19 +148,124 @@
             this.xPanderPanel1.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.xPanderPanel1.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.xPanderPanel1.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.xPanderPanel1.Expand = true;
             this.xPanderPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel1.Image = null;
             this.xPanderPanel1.Name = "xPanderPanel1";
-            this.xPanderPanel1.Size = new System.Drawing.Size(1197, 25);
+            this.xPanderPanel1.Size = new System.Drawing.Size(1197, 235);
             this.xPanderPanel1.TabIndex = 0;
             this.xPanderPanel1.Text = "시리얼포트";
             this.xPanderPanel1.ToolTipTextCloseIcon = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // TextBox_received_hex
+            // 
+            this.TextBox_received_hex.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBox_received_hex.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TextBox_received_hex.Location = new System.Drawing.Point(935, 61);
+            this.TextBox_received_hex.Multiline = true;
+            this.TextBox_received_hex.Name = "TextBox_received_hex";
+            this.TextBox_received_hex.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox_received_hex.Size = new System.Drawing.Size(237, 144);
+            this.TextBox_received_hex.TabIndex = 32;
+            // 
+            // TextBox_received
+            // 
+            this.TextBox_received.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBox_received.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TextBox_received.Location = new System.Drawing.Point(587, 61);
+            this.TextBox_received.Multiline = true;
+            this.TextBox_received.Name = "TextBox_received";
+            this.TextBox_received.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox_received.Size = new System.Drawing.Size(326, 150);
+            this.TextBox_received.TabIndex = 31;
+            // 
+            // textBox_send
+            // 
+            this.textBox_send.Location = new System.Drawing.Point(23, 188);
+            this.textBox_send.Name = "textBox_send";
+            this.textBox_send.Size = new System.Drawing.Size(328, 21);
+            this.textBox_send.TabIndex = 27;
+            // 
+            // label_receive
+            // 
+            this.label_receive.AutoSize = true;
+            this.label_receive.Location = new System.Drawing.Point(585, 37);
+            this.label_receive.Name = "label_receive";
+            this.label_receive.Size = new System.Drawing.Size(29, 12);
+            this.label_receive.TabIndex = 26;
+            this.label_receive.Text = "수신";
+            // 
+            // button_send
+            // 
+            this.button_send.Location = new System.Drawing.Point(373, 188);
+            this.button_send.Name = "button_send";
+            this.button_send.Size = new System.Drawing.Size(75, 23);
+            this.button_send.TabIndex = 28;
+            this.button_send.Text = "보내기";
+            this.button_send.UseVisualStyleBackColor = true;
+            this.button_send.Click += new System.EventHandler(this.Button_send_Click);
+            // 
+            // label_status
+            // 
+            this.label_status.AutoSize = true;
+            this.label_status.Location = new System.Drawing.Point(27, 98);
+            this.label_status.Name = "label_status";
+            this.label_status.Size = new System.Drawing.Size(53, 12);
+            this.label_status.TabIndex = 30;
+            this.label_status.Text = "연결상태";
+            // 
+            // label_send
+            // 
+            this.label_send.AutoSize = true;
+            this.label_send.Location = new System.Drawing.Point(21, 173);
+            this.label_send.Name = "label_send";
+            this.label_send.Size = new System.Drawing.Size(29, 12);
+            this.label_send.TabIndex = 29;
+            this.label_send.Text = "송신";
+            // 
+            // button_disconnect
+            // 
+            this.button_disconnect.Location = new System.Drawing.Point(124, 113);
+            this.button_disconnect.Name = "button_disconnect";
+            this.button_disconnect.Size = new System.Drawing.Size(75, 23);
+            this.button_disconnect.TabIndex = 24;
+            this.button_disconnect.Text = "연결끊기";
+            this.button_disconnect.UseVisualStyleBackColor = true;
+            this.button_disconnect.Click += new System.EventHandler(this.Button_disconnect_Click);
+            // 
+            // comboBox_port
+            // 
+            this.comboBox_port.FormattingEnabled = true;
+            this.comboBox_port.Location = new System.Drawing.Point(27, 66);
+            this.comboBox_port.Name = "comboBox_port";
+            this.comboBox_port.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_port.TabIndex = 21;
+            // 
+            // button_connect
+            // 
+            this.button_connect.Location = new System.Drawing.Point(27, 113);
+            this.button_connect.Name = "button_connect";
+            this.button_connect.Size = new System.Drawing.Size(75, 23);
+            this.button_connect.TabIndex = 23;
+            this.button_connect.Text = "연결하기";
+            this.button_connect.UseVisualStyleBackColor = true;
+            this.button_connect.Click += new System.EventHandler(this.Button_connect_Click);
+            // 
+            // label_port
+            // 
+            this.label_port.AutoSize = true;
+            this.label_port.Location = new System.Drawing.Point(27, 48);
+            this.label_port.Name = "label_port";
+            this.label_port.Size = new System.Drawing.Size(90, 12);
+            this.label_port.TabIndex = 22;
+            this.label_port.Text = "COM 포트 설정";
+            // 
             // xPanderPanel2
             // 
             this.xPanderPanel2.CaptionFont = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel2.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel2.Controls.Add(this.zedGraphControl1);
             this.xPanderPanel2.CustomColors.BackColor = System.Drawing.SystemColors.Control;
             this.xPanderPanel2.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
@@ -190,9 +298,26 @@
             this.xPanderPanel2.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel2.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // zedGraphControl1
+            // 
+            this.zedGraphControl1.Location = new System.Drawing.Point(27, 38);
+            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.zedGraphControl1.Name = "zedGraphControl1";
+            this.zedGraphControl1.ScrollGrace = 0D;
+            this.zedGraphControl1.ScrollMaxX = 0D;
+            this.zedGraphControl1.ScrollMaxY = 0D;
+            this.zedGraphControl1.ScrollMaxY2 = 0D;
+            this.zedGraphControl1.ScrollMinX = 0D;
+            this.zedGraphControl1.ScrollMinY = 0D;
+            this.zedGraphControl1.ScrollMinY2 = 0D;
+            this.zedGraphControl1.Size = new System.Drawing.Size(997, 138);
+            this.zedGraphControl1.TabIndex = 0;
+            this.zedGraphControl1.UseExtendedPrintDialog = true;
+            // 
             // xPanderPanel3
             // 
             this.xPanderPanel3.CaptionFont = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel3.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel3.CustomColors.BackColor = System.Drawing.SystemColors.Control;
             this.xPanderPanel3.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.xPanderPanel3.CustomColors.CaptionCheckedGradientBegin = System.Drawing.Color.Empty;
@@ -214,119 +339,15 @@
             this.xPanderPanel3.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.xPanderPanel3.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.xPanderPanel3.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
-            this.xPanderPanel3.Expand = true;
             this.xPanderPanel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel3.Image = null;
             this.xPanderPanel3.Name = "xPanderPanel3";
-            this.xPanderPanel3.Size = new System.Drawing.Size(1197, 203);
+            this.xPanderPanel3.Size = new System.Drawing.Size(1197, 25);
             this.xPanderPanel3.TabIndex = 2;
             this.xPanderPanel3.Text = "게인조정";
             this.xPanderPanel3.ToolTipTextCloseIcon = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelExpanded = null;
-            // 
-            // comboBox_port
-            // 
-            this.comboBox_port.FormattingEnabled = true;
-            this.comboBox_port.Location = new System.Drawing.Point(27, 66);
-            this.comboBox_port.Name = "comboBox_port";
-            this.comboBox_port.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_port.TabIndex = 21;
-            // 
-            // label_port
-            // 
-            this.label_port.AutoSize = true;
-            this.label_port.Location = new System.Drawing.Point(27, 48);
-            this.label_port.Name = "label_port";
-            this.label_port.Size = new System.Drawing.Size(90, 12);
-            this.label_port.TabIndex = 22;
-            this.label_port.Text = "COM 포트 설정";
-            // 
-            // button_connect
-            // 
-            this.button_connect.Location = new System.Drawing.Point(27, 113);
-            this.button_connect.Name = "button_connect";
-            this.button_connect.Size = new System.Drawing.Size(75, 23);
-            this.button_connect.TabIndex = 23;
-            this.button_connect.Text = "연결하기";
-            this.button_connect.UseVisualStyleBackColor = true;
-            this.button_connect.Click += new System.EventHandler(this.Button_connect_Click);
-            // 
-            // button_disconnect
-            // 
-            this.button_disconnect.Location = new System.Drawing.Point(124, 113);
-            this.button_disconnect.Name = "button_disconnect";
-            this.button_disconnect.Size = new System.Drawing.Size(75, 23);
-            this.button_disconnect.TabIndex = 24;
-            this.button_disconnect.Text = "연결끊기";
-            this.button_disconnect.UseVisualStyleBackColor = true;
-            this.button_disconnect.Click += new System.EventHandler(this.Button_disconnect_Click);
-            // 
-            // label_receive
-            // 
-            this.label_receive.AutoSize = true;
-            this.label_receive.Location = new System.Drawing.Point(541, 33);
-            this.label_receive.Name = "label_receive";
-            this.label_receive.Size = new System.Drawing.Size(29, 12);
-            this.label_receive.TabIndex = 26;
-            this.label_receive.Text = "수신";
-            // 
-            // textBox_send
-            // 
-            this.textBox_send.Location = new System.Drawing.Point(23, 188);
-            this.textBox_send.Name = "textBox_send";
-            this.textBox_send.Size = new System.Drawing.Size(328, 21);
-            this.textBox_send.TabIndex = 27;
-            // 
-            // button_send
-            // 
-            this.button_send.Location = new System.Drawing.Point(373, 188);
-            this.button_send.Name = "button_send";
-            this.button_send.Size = new System.Drawing.Size(75, 23);
-            this.button_send.TabIndex = 28;
-            this.button_send.Text = "보내기";
-            this.button_send.UseVisualStyleBackColor = true;
-            this.button_send.Click += new System.EventHandler(this.Button_send_Click);
-            // 
-            // label_send
-            // 
-            this.label_send.AutoSize = true;
-            this.label_send.Location = new System.Drawing.Point(21, 173);
-            this.label_send.Name = "label_send";
-            this.label_send.Size = new System.Drawing.Size(29, 12);
-            this.label_send.TabIndex = 29;
-            this.label_send.Text = "송신";
-            // 
-            // label_status
-            // 
-            this.label_status.AutoSize = true;
-            this.label_status.Location = new System.Drawing.Point(27, 98);
-            this.label_status.Name = "label_status";
-            this.label_status.Size = new System.Drawing.Size(53, 12);
-            this.label_status.TabIndex = 30;
-            this.label_status.Text = "연결상태";
-            // 
-            // TextBox_received
-            // 
-            this.TextBox_received.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBox_received.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TextBox_received.Location = new System.Drawing.Point(543, 48);
-            this.TextBox_received.Multiline = true;
-            this.TextBox_received.Name = "TextBox_received";
-            this.TextBox_received.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_received.Size = new System.Drawing.Size(326, 150);
-            this.TextBox_received.TabIndex = 31;
-            // 
-            // TextBox_received_hex
-            // 
-            this.TextBox_received_hex.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBox_received_hex.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TextBox_received_hex.Location = new System.Drawing.Point(891, 48);
-            this.TextBox_received_hex.Multiline = true;
-            this.TextBox_received_hex.Name = "TextBox_received_hex";
-            this.TextBox_received_hex.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_received_hex.Size = new System.Drawing.Size(237, 144);
-            this.TextBox_received_hex.TabIndex = 32;
             // 
             // textLng
             // 
@@ -374,7 +395,7 @@
             // 
             this.map.Bearing = 0F;
             this.map.CanDragMap = true;
-            this.map.Dock = System.Windows.Forms.DockStyle.Top;
+            this.map.Dock = System.Windows.Forms.DockStyle.Fill;
             this.map.EmptyTileColor = System.Drawing.Color.Navy;
             this.map.GrayScaleMode = false;
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
@@ -393,26 +414,10 @@
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(1197, 358);
+            this.map.Size = new System.Drawing.Size(1197, 646);
             this.map.TabIndex = 26;
             this.map.Zoom = 0D;
             this.map.MouseDown += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
-            // 
-            // zedGraphControl1
-            // 
-            this.zedGraphControl1.Location = new System.Drawing.Point(27, 38);
-            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.zedGraphControl1.Name = "zedGraphControl1";
-            this.zedGraphControl1.ScrollGrace = 0D;
-            this.zedGraphControl1.ScrollMaxX = 0D;
-            this.zedGraphControl1.ScrollMaxY = 0D;
-            this.zedGraphControl1.ScrollMaxY2 = 0D;
-            this.zedGraphControl1.ScrollMinX = 0D;
-            this.zedGraphControl1.ScrollMinY = 0D;
-            this.zedGraphControl1.ScrollMinY2 = 0D;
-            this.zedGraphControl1.Size = new System.Drawing.Size(997, 138);
-            this.zedGraphControl1.TabIndex = 0;
-            this.zedGraphControl1.UseExtendedPrintDialog = true;
             // 
             // Form1
             // 
