@@ -109,27 +109,23 @@ namespace INAV_GCS
 
                 if (iRecSize != 0) // 수신된 데이터의 수가 0이 아닐때만 처리하자
                 {
-                    //          Console.Write("rx:" + iRecSize.ToString());
-
                     byte[] buff = new byte[iRecSize];
                     try
                     {
                         serialPort1.Read(buff, 0, iRecSize);
-
-                        //if (this.tsbRxViewText.Checked || this.tsbRxViewBoth.Checked)
-                        //{
+                        if (this.CB_Enable_Terminal.Checked && this.radioButton_ASCII.Checked)
+                        {
                             string strTemp = this.UTF8.AddBytes(buff.ToList()).Replace("\r", "").Replace("\n", Environment.NewLine);
                             TextBox_received.AppendText(strTemp);
                         //if (objSaveFile != null)
                         //    objSaveFile.Write(strTemp);
 
-                        //}
+                        }
 
-                        //if (this.tsbRxViewHex.Checked || this.tsbRxViewBoth.Checked)
-                        //{
-                        //    //     Console.WriteLine("HEX");
-                        TextBox_received_hex.AppendText(BitConverter.ToString(buff).Replace("-", " ") + " ");
-                        //}
+                        if (this.CB_Enable_Terminal.Checked && this.radioButton_HEX.Checked)
+                        {
+                            TextBox_received.AppendText(BitConverter.ToString(buff).Replace("-", " ") + " ");
+                        }
                     }
                     catch { }
                 }

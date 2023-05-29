@@ -33,10 +33,9 @@
             this.panel1 = new BSE.Windows.Forms.Panel();
             this.xPanderPanelList1 = new BSE.Windows.Forms.XPanderPanelList();
             this.xPanderPanel1 = new BSE.Windows.Forms.XPanderPanel();
-            this.TextBox_received_hex = new System.Windows.Forms.TextBox();
+            this.CB_Enable_Terminal = new System.Windows.Forms.CheckBox();
             this.TextBox_received = new System.Windows.Forms.TextBox();
             this.textBox_send = new System.Windows.Forms.TextBox();
-            this.label_receive = new System.Windows.Forms.Label();
             this.button_send = new System.Windows.Forms.Button();
             this.label_status = new System.Windows.Forms.Label();
             this.label_send = new System.Windows.Forms.Label();
@@ -53,10 +52,14 @@
             this.btnLoadIntoMap = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.map = new GMap.NET.WindowsForms.GMapControl();
+            this.groupBox_RxFormat = new System.Windows.Forms.GroupBox();
+            this.radioButton_ASCII = new System.Windows.Forms.RadioButton();
+            this.radioButton_HEX = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
+            this.groupBox_RxFormat.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,13 +85,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Image = null;
-            this.panel1.Location = new System.Drawing.Point(0, 332);
+            this.panel1.Location = new System.Drawing.Point(0, 356);
             this.panel1.MinimumSize = new System.Drawing.Size(27, 27);
             this.panel1.Name = "panel1";
             this.panel1.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
             this.panel1.ShowCloseIcon = true;
             this.panel1.ShowExpandIcon = true;
-            this.panel1.Size = new System.Drawing.Size(1197, 314);
+            this.panel1.Size = new System.Drawing.Size(1197, 351);
             this.panel1.TabIndex = 1;
             this.panel1.Text = "Menu";
             this.panel1.ToolTipTextCloseIcon = null;
@@ -108,7 +111,7 @@
             this.xPanderPanelList1.Name = "xPanderPanelList1";
             this.xPanderPanelList1.PanelColors = null;
             this.xPanderPanelList1.ShowExpandIcon = true;
-            this.xPanderPanelList1.Size = new System.Drawing.Size(1197, 285);
+            this.xPanderPanelList1.Size = new System.Drawing.Size(1197, 322);
             this.xPanderPanelList1.TabIndex = 0;
             this.xPanderPanelList1.Text = "xPanderPanelList1";
             // 
@@ -116,10 +119,10 @@
             // 
             this.xPanderPanel1.CaptionFont = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel1.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
-            this.xPanderPanel1.Controls.Add(this.TextBox_received_hex);
+            this.xPanderPanel1.Controls.Add(this.groupBox_RxFormat);
+            this.xPanderPanel1.Controls.Add(this.CB_Enable_Terminal);
             this.xPanderPanel1.Controls.Add(this.TextBox_received);
             this.xPanderPanel1.Controls.Add(this.textBox_send);
-            this.xPanderPanel1.Controls.Add(this.label_receive);
             this.xPanderPanel1.Controls.Add(this.button_send);
             this.xPanderPanel1.Controls.Add(this.label_status);
             this.xPanderPanel1.Controls.Add(this.label_send);
@@ -152,33 +155,32 @@
             this.xPanderPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel1.Image = null;
             this.xPanderPanel1.Name = "xPanderPanel1";
-            this.xPanderPanel1.Size = new System.Drawing.Size(1197, 235);
+            this.xPanderPanel1.Size = new System.Drawing.Size(1197, 272);
             this.xPanderPanel1.TabIndex = 0;
             this.xPanderPanel1.Text = "시리얼포트";
             this.xPanderPanel1.ToolTipTextCloseIcon = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // TextBox_received_hex
+            // CB_Enable_Terminal
             // 
-            this.TextBox_received_hex.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBox_received_hex.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TextBox_received_hex.Location = new System.Drawing.Point(935, 61);
-            this.TextBox_received_hex.Multiline = true;
-            this.TextBox_received_hex.Name = "TextBox_received_hex";
-            this.TextBox_received_hex.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_received_hex.Size = new System.Drawing.Size(237, 144);
-            this.TextBox_received_hex.TabIndex = 32;
+            this.CB_Enable_Terminal.AutoSize = true;
+            this.CB_Enable_Terminal.Location = new System.Drawing.Point(624, 39);
+            this.CB_Enable_Terminal.Name = "CB_Enable_Terminal";
+            this.CB_Enable_Terminal.Size = new System.Drawing.Size(117, 16);
+            this.CB_Enable_Terminal.TabIndex = 33;
+            this.CB_Enable_Terminal.Text = "Enable Terminal";
+            this.CB_Enable_Terminal.UseVisualStyleBackColor = true;
             // 
             // TextBox_received
             // 
             this.TextBox_received.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBox_received.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TextBox_received.Location = new System.Drawing.Point(587, 61);
+            this.TextBox_received.Location = new System.Drawing.Point(624, 61);
             this.TextBox_received.Multiline = true;
             this.TextBox_received.Name = "TextBox_received";
             this.TextBox_received.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_received.Size = new System.Drawing.Size(326, 150);
+            this.TextBox_received.Size = new System.Drawing.Size(536, 195);
             this.TextBox_received.TabIndex = 31;
             // 
             // textBox_send
@@ -187,15 +189,6 @@
             this.textBox_send.Name = "textBox_send";
             this.textBox_send.Size = new System.Drawing.Size(328, 21);
             this.textBox_send.TabIndex = 27;
-            // 
-            // label_receive
-            // 
-            this.label_receive.AutoSize = true;
-            this.label_receive.Location = new System.Drawing.Point(585, 37);
-            this.label_receive.Name = "label_receive";
-            this.label_receive.Size = new System.Drawing.Size(29, 12);
-            this.label_receive.TabIndex = 26;
-            this.label_receive.Text = "수신";
             // 
             // button_send
             // 
@@ -414,16 +407,50 @@
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(1197, 646);
+            this.map.Size = new System.Drawing.Size(1197, 707);
             this.map.TabIndex = 26;
             this.map.Zoom = 0D;
             this.map.MouseDown += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
+            // 
+            // groupBox_RxFormat
+            // 
+            this.groupBox_RxFormat.Controls.Add(this.radioButton_HEX);
+            this.groupBox_RxFormat.Controls.Add(this.radioButton_ASCII);
+            this.groupBox_RxFormat.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox_RxFormat.Location = new System.Drawing.Point(516, 61);
+            this.groupBox_RxFormat.Name = "groupBox_RxFormat";
+            this.groupBox_RxFormat.Size = new System.Drawing.Size(83, 70);
+            this.groupBox_RxFormat.TabIndex = 34;
+            this.groupBox_RxFormat.TabStop = false;
+            this.groupBox_RxFormat.Text = "Rx_Format";
+            // 
+            // radioButton_ASCII
+            // 
+            this.radioButton_ASCII.AutoSize = true;
+            this.radioButton_ASCII.Checked = true;
+            this.radioButton_ASCII.Location = new System.Drawing.Point(7, 18);
+            this.radioButton_ASCII.Name = "radioButton_ASCII";
+            this.radioButton_ASCII.Size = new System.Drawing.Size(54, 16);
+            this.radioButton_ASCII.TabIndex = 0;
+            this.radioButton_ASCII.TabStop = true;
+            this.radioButton_ASCII.Text = "ASCII";
+            this.radioButton_ASCII.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_HEX
+            // 
+            this.radioButton_HEX.AutoSize = true;
+            this.radioButton_HEX.Location = new System.Drawing.Point(7, 45);
+            this.radioButton_HEX.Name = "radioButton_HEX";
+            this.radioButton_HEX.Size = new System.Drawing.Size(47, 16);
+            this.radioButton_HEX.TabIndex = 1;
+            this.radioButton_HEX.Text = "HEX";
+            this.radioButton_HEX.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 646);
+            this.ClientSize = new System.Drawing.Size(1197, 707);
             this.Controls.Add(this.textLng);
             this.Controls.Add(this.textLat);
             this.Controls.Add(this.label2);
@@ -439,6 +466,8 @@
             this.xPanderPanel1.ResumeLayout(false);
             this.xPanderPanel1.PerformLayout();
             this.xPanderPanel2.ResumeLayout(false);
+            this.groupBox_RxFormat.ResumeLayout(false);
+            this.groupBox_RxFormat.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,10 +479,8 @@
         private BSE.Windows.Forms.Panel panel1;
         private BSE.Windows.Forms.XPanderPanelList xPanderPanelList1;
         private BSE.Windows.Forms.XPanderPanel xPanderPanel1;
-        private System.Windows.Forms.TextBox TextBox_received_hex;
         private System.Windows.Forms.TextBox TextBox_received;
         private System.Windows.Forms.TextBox textBox_send;
-        private System.Windows.Forms.Label label_receive;
         private System.Windows.Forms.Button button_send;
         private System.Windows.Forms.Label label_status;
         private System.Windows.Forms.Label label_send;
@@ -470,6 +497,10 @@
         private System.Windows.Forms.Label label1;
         private GMap.NET.WindowsForms.GMapControl map;
         private ZedGraph.ZedGraphControl zedGraphControl1;
+        private System.Windows.Forms.CheckBox CB_Enable_Terminal;
+        private System.Windows.Forms.GroupBox groupBox_RxFormat;
+        private System.Windows.Forms.RadioButton radioButton_HEX;
+        private System.Windows.Forms.RadioButton radioButton_ASCII;
     }
 }
 
