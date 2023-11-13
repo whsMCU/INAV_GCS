@@ -2,28 +2,28 @@
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using INAV_GCS.Class;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
 using System.IO.Ports;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static GMap.NET.Entity.OpenStreetMapRouteEntity;
 
 namespace INAV_GCS
 {
     public partial class Form1 : Form
     {
         UTF8 UTF8 = new UTF8();
+        DataPassing data = new DataPassing();
         GMapOverlay markers = new GMapOverlay("markers");
         public Form1()
         {
             InitializeComponent();
+
+            zedGraphControl1.GraphPane.Title.Text = "Demonstration of Multi Y Graph";
+            zedGraphControl1.GraphPane.XAxis.Title.Text = "Time, s";
+            zedGraphControl1.GraphPane.YAxis.Title.Text = "Velocity, m/s";
+            zedGraphControl1.GraphPane.Y2Axis.Title.Text = "Acceleration, m/s2";
         }
 
         private void btnLoadIntoMap_Click(object sender, EventArgs e)
@@ -103,6 +103,7 @@ namespace INAV_GCS
         {
             //int ReceiveData = serialPort1.ReadByte();  //시리얼 버터에 수신된 데이타를 ReceiveData 읽어오기
             //richTextBox_received.Text = richTextBox_received.Text + string.Format("{0:X2}", ReceiveData);  //int 형식을 string형식으로 변환하여 출력
+            float[] attitude = new float[4];
             try
             {
                 int iRecSize = serialPort1.BytesToRead; // 수신된 데이터 갯수
@@ -113,6 +114,11 @@ namespace INAV_GCS
                     try
                     {
                         serialPort1.Read(buff, 0, iRecSize);
+                        attitude = data.dataRecive(buff, iRecSize);
+                        text_roll.Text = attitude[0].ToString();
+                        text_pitch.Text = attitude[1].ToString();
+                        text_yaw.Text = attitude[2].ToString();
+                        data.dataRecive(buff, iRecSize);
                         if (this.CB_Enable_Terminal.Checked && this.radioButton_ASCII.Checked)
                         {
                             string strTemp = this.UTF8.AddBytes(buff.ToList()).Replace("\r", "").Replace("\n", Environment.NewLine);

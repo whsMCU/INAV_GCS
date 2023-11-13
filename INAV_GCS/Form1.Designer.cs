@@ -33,6 +33,9 @@
             this.panel1 = new BSE.Windows.Forms.Panel();
             this.xPanderPanelList1 = new BSE.Windows.Forms.XPanderPanelList();
             this.xPanderPanel1 = new BSE.Windows.Forms.XPanderPanel();
+            this.groupBox_RxFormat = new System.Windows.Forms.GroupBox();
+            this.radioButton_HEX = new System.Windows.Forms.RadioButton();
+            this.radioButton_ASCII = new System.Windows.Forms.RadioButton();
             this.CB_Enable_Terminal = new System.Windows.Forms.CheckBox();
             this.TextBox_received = new System.Windows.Forms.TextBox();
             this.textBox_send = new System.Windows.Forms.TextBox();
@@ -52,14 +55,17 @@
             this.btnLoadIntoMap = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.map = new GMap.NET.WindowsForms.GMapControl();
-            this.groupBox_RxFormat = new System.Windows.Forms.GroupBox();
-            this.radioButton_ASCII = new System.Windows.Forms.RadioButton();
-            this.radioButton_HEX = new System.Windows.Forms.RadioButton();
+            this.text_roll = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.text_pitch = new System.Windows.Forms.TextBox();
+            this.text_yaw = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel1.SuspendLayout();
-            this.xPanderPanel2.SuspendLayout();
             this.groupBox_RxFormat.SuspendLayout();
+            this.xPanderPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,16 +157,49 @@
             this.xPanderPanel1.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.xPanderPanel1.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.xPanderPanel1.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
-            this.xPanderPanel1.Expand = true;
             this.xPanderPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel1.Image = null;
             this.xPanderPanel1.Name = "xPanderPanel1";
-            this.xPanderPanel1.Size = new System.Drawing.Size(1197, 272);
+            this.xPanderPanel1.Size = new System.Drawing.Size(1197, 25);
             this.xPanderPanel1.TabIndex = 0;
             this.xPanderPanel1.Text = "시리얼포트";
             this.xPanderPanel1.ToolTipTextCloseIcon = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // groupBox_RxFormat
+            // 
+            this.groupBox_RxFormat.Controls.Add(this.radioButton_HEX);
+            this.groupBox_RxFormat.Controls.Add(this.radioButton_ASCII);
+            this.groupBox_RxFormat.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox_RxFormat.Location = new System.Drawing.Point(516, 61);
+            this.groupBox_RxFormat.Name = "groupBox_RxFormat";
+            this.groupBox_RxFormat.Size = new System.Drawing.Size(83, 70);
+            this.groupBox_RxFormat.TabIndex = 34;
+            this.groupBox_RxFormat.TabStop = false;
+            this.groupBox_RxFormat.Text = "Rx_Format";
+            // 
+            // radioButton_HEX
+            // 
+            this.radioButton_HEX.AutoSize = true;
+            this.radioButton_HEX.Location = new System.Drawing.Point(7, 45);
+            this.radioButton_HEX.Name = "radioButton_HEX";
+            this.radioButton_HEX.Size = new System.Drawing.Size(47, 16);
+            this.radioButton_HEX.TabIndex = 1;
+            this.radioButton_HEX.Text = "HEX";
+            this.radioButton_HEX.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_ASCII
+            // 
+            this.radioButton_ASCII.AutoSize = true;
+            this.radioButton_ASCII.Checked = true;
+            this.radioButton_ASCII.Location = new System.Drawing.Point(7, 18);
+            this.radioButton_ASCII.Name = "radioButton_ASCII";
+            this.radioButton_ASCII.Size = new System.Drawing.Size(54, 16);
+            this.radioButton_ASCII.TabIndex = 0;
+            this.radioButton_ASCII.TabStop = true;
+            this.radioButton_ASCII.Text = "ASCII";
+            this.radioButton_ASCII.UseVisualStyleBackColor = true;
             // 
             // CB_Enable_Terminal
             // 
@@ -281,10 +320,11 @@
             this.xPanderPanel2.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.xPanderPanel2.Expand = true;
             this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
-            this.xPanderPanel2.Size = new System.Drawing.Size(1197, 25);
+            this.xPanderPanel2.Size = new System.Drawing.Size(1197, 272);
             this.xPanderPanel2.TabIndex = 1;
             this.xPanderPanel2.Text = "그래프";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
@@ -303,7 +343,7 @@
             this.zedGraphControl1.ScrollMinX = 0D;
             this.zedGraphControl1.ScrollMinY = 0D;
             this.zedGraphControl1.ScrollMinY2 = 0D;
-            this.zedGraphControl1.Size = new System.Drawing.Size(997, 138);
+            this.zedGraphControl1.Size = new System.Drawing.Size(997, 228);
             this.zedGraphControl1.TabIndex = 0;
             this.zedGraphControl1.UseExtendedPrintDialog = true;
             // 
@@ -412,45 +452,65 @@
             this.map.Zoom = 0D;
             this.map.MouseDown += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // 
-            // groupBox_RxFormat
+            // text_roll
             // 
-            this.groupBox_RxFormat.Controls.Add(this.radioButton_HEX);
-            this.groupBox_RxFormat.Controls.Add(this.radioButton_ASCII);
-            this.groupBox_RxFormat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox_RxFormat.Location = new System.Drawing.Point(516, 61);
-            this.groupBox_RxFormat.Name = "groupBox_RxFormat";
-            this.groupBox_RxFormat.Size = new System.Drawing.Size(83, 70);
-            this.groupBox_RxFormat.TabIndex = 34;
-            this.groupBox_RxFormat.TabStop = false;
-            this.groupBox_RxFormat.Text = "Rx_Format";
+            this.text_roll.Location = new System.Drawing.Point(956, 39);
+            this.text_roll.Name = "text_roll";
+            this.text_roll.Size = new System.Drawing.Size(100, 21);
+            this.text_roll.TabIndex = 27;
             // 
-            // radioButton_ASCII
+            // label3
             // 
-            this.radioButton_ASCII.AutoSize = true;
-            this.radioButton_ASCII.Checked = true;
-            this.radioButton_ASCII.Location = new System.Drawing.Point(7, 18);
-            this.radioButton_ASCII.Name = "radioButton_ASCII";
-            this.radioButton_ASCII.Size = new System.Drawing.Size(54, 16);
-            this.radioButton_ASCII.TabIndex = 0;
-            this.radioButton_ASCII.TabStop = true;
-            this.radioButton_ASCII.Text = "ASCII";
-            this.radioButton_ASCII.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(956, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 12);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "ROLL";
             // 
-            // radioButton_HEX
+            // label4
             // 
-            this.radioButton_HEX.AutoSize = true;
-            this.radioButton_HEX.Location = new System.Drawing.Point(7, 45);
-            this.radioButton_HEX.Name = "radioButton_HEX";
-            this.radioButton_HEX.Size = new System.Drawing.Size(47, 16);
-            this.radioButton_HEX.TabIndex = 1;
-            this.radioButton_HEX.Text = "HEX";
-            this.radioButton_HEX.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(956, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "PITCH";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(954, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 12);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "YAW";
+            // 
+            // text_pitch
+            // 
+            this.text_pitch.Location = new System.Drawing.Point(956, 87);
+            this.text_pitch.Name = "text_pitch";
+            this.text_pitch.Size = new System.Drawing.Size(100, 21);
+            this.text_pitch.TabIndex = 31;
+            // 
+            // text_yaw
+            // 
+            this.text_yaw.Location = new System.Drawing.Point(956, 139);
+            this.text_yaw.Name = "text_yaw";
+            this.text_yaw.Size = new System.Drawing.Size(100, 21);
+            this.text_yaw.TabIndex = 32;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1197, 707);
+            this.Controls.Add(this.text_yaw);
+            this.Controls.Add(this.text_pitch);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.text_roll);
             this.Controls.Add(this.textLng);
             this.Controls.Add(this.textLat);
             this.Controls.Add(this.label2);
@@ -465,9 +525,9 @@
             this.xPanderPanelList1.ResumeLayout(false);
             this.xPanderPanel1.ResumeLayout(false);
             this.xPanderPanel1.PerformLayout();
-            this.xPanderPanel2.ResumeLayout(false);
             this.groupBox_RxFormat.ResumeLayout(false);
             this.groupBox_RxFormat.PerformLayout();
+            this.xPanderPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,6 +561,12 @@
         private System.Windows.Forms.GroupBox groupBox_RxFormat;
         private System.Windows.Forms.RadioButton radioButton_HEX;
         private System.Windows.Forms.RadioButton radioButton_ASCII;
+        private System.Windows.Forms.TextBox text_roll;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox text_pitch;
+        private System.Windows.Forms.TextBox text_yaw;
     }
 }
 
