@@ -74,9 +74,9 @@ namespace INAV_GCS.Class
 
         public float[] Passing()
         {
-            attitude[ROLL] = BitConverter.ToInt16(buff_pass, 3)/10;
-            attitude[PITCH] = BitConverter.ToInt16(buff_pass, 5) / 10;
-            attitude[YAW] = BitConverter.ToInt16(buff_pass, 7) / 10;
+            attitude[ROLL] = BitConverter.ToInt16(buff_pass, 3)/100;
+            attitude[PITCH] = BitConverter.ToInt16(buff_pass, 5) / 100;
+            attitude[YAW] = BitConverter.ToInt16(buff_pass, 7) / 100;
             return attitude;
         }
 

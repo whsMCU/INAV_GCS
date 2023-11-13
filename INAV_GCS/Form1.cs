@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Windows.Forms;
+using ZedGraph;
 
 namespace INAV_GCS
 {
@@ -16,14 +17,26 @@ namespace INAV_GCS
         UTF8 UTF8 = new UTF8();
         DataPassing data = new DataPassing();
         GMapOverlay markers = new GMapOverlay("markers");
+
+        PointPairList pointRoll = new PointPairList();
+        PointPairList pointPitch = new PointPairList();
+        PointPairList pointYaw = new PointPairList();
         public Form1()
         {
             InitializeComponent();
 
-            zedGraphControl1.GraphPane.Title.Text = "Demonstration of Multi Y Graph";
-            zedGraphControl1.GraphPane.XAxis.Title.Text = "Time, s";
-            zedGraphControl1.GraphPane.YAxis.Title.Text = "Velocity, m/s";
-            zedGraphControl1.GraphPane.Y2Axis.Title.Text = "Acceleration, m/s2";
+            // clear old curves
+            zedGraphControl1.GraphPane.CurveList.Clear();
+
+            // style the plot
+            zedGraphControl1.GraphPane.Title.Text = $"Scatter Plot points)";
+            zedGraphControl1.GraphPane.XAxis.Title.Text = "Horizontal Axis Label";
+            zedGraphControl1.GraphPane.YAxis.Title.Text = "Vertical Axis Label";
+
+            // auto-axis and update the display
+            zedGraphControl1.GraphPane.XAxis.ResetAutoScale(zedGraphControl1.GraphPane, CreateGraphics());
+            zedGraphControl1.GraphPane.YAxis.ResetAutoScale(zedGraphControl1.GraphPane, CreateGraphics());
+            zedGraphControl1.Refresh();
         }
 
         private void btnLoadIntoMap_Click(object sender, EventArgs e)
@@ -119,6 +132,15 @@ namespace INAV_GCS
                         text_pitch.Text = attitude[1].ToString();
                         text_yaw.Text = attitude[2].ToString();
                         data.dataRecive(buff, iRecSize);
+
+                        //pointRoll.Add(attitude[0], red);
+
+
+                        // auto-axis and update the display
+                        zedGraphControl1.GraphPane.XAxis.ResetAutoScale(zedGraphControl1.GraphPane, CreateGraphics());
+                        zedGraphControl1.GraphPane.YAxis.ResetAutoScale(zedGraphControl1.GraphPane, CreateGraphics());
+                        zedGraphControl1.Refresh();
+
                         if (this.CB_Enable_Terminal.Checked && this.radioButton_ASCII.Checked)
                         {
                             string strTemp = this.UTF8.AddBytes(buff.ToList()).Replace("\r", "").Replace("\n", Environment.NewLine);
