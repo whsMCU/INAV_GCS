@@ -133,7 +133,9 @@ namespace INAV_GCS
                         text_yaw.Text = attitude[2].ToString();
                         data.dataRecive(buff, iRecSize);
 
-                        //pointRoll.Add(attitude[0], red);
+                        //PointPair temp = new PointPair(time, attitude[1]);
+
+                        //pointRoll.Add(temp);
 
 
                         // auto-axis and update the display
