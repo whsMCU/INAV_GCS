@@ -61,6 +61,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.text_pitch = new System.Windows.Forms.TextBox();
             this.text_yaw = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel1.SuspendLayout();
@@ -567,6 +568,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox text_pitch;
         private System.Windows.Forms.TextBox text_yaw;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

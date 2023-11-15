@@ -18,25 +18,43 @@ namespace INAV_GCS
         DataPassing data = new DataPassing();
         GMapOverlay markers = new GMapOverlay("markers");
 
+        GraphPane attitude_graph = new GraphPane();
+        LineItem line_roll;
+        LineItem line_pitch;
+        LineItem line_yaw;
         PointPairList pointRoll = new PointPairList();
         PointPairList pointPitch = new PointPairList();
         PointPairList pointYaw = new PointPairList();
+
+        Int32 cnt = 0;
         public Form1()
         {
             InitializeComponent();
 
-            // clear old curves
-            zedGraphControl1.GraphPane.CurveList.Clear();
+            int lineWidth = 2;
 
-            // style the plot
-            zedGraphControl1.GraphPane.Title.Text = $"Scatter Plot points)";
-            zedGraphControl1.GraphPane.XAxis.Title.Text = "Horizontal Axis Label";
-            zedGraphControl1.GraphPane.YAxis.Title.Text = "Vertical Axis Label";
+            attitude_graph = zedGraphControl1.GraphPane;
 
-            // auto-axis and update the display
-            zedGraphControl1.GraphPane.XAxis.ResetAutoScale(zedGraphControl1.GraphPane, CreateGraphics());
-            zedGraphControl1.GraphPane.YAxis.ResetAutoScale(zedGraphControl1.GraphPane, CreateGraphics());
-            zedGraphControl1.Refresh();
+            attitude_graph.Title.Text = "EXAMPLE FOR ZEDGRAPH";
+            //exampleGraphPane.Title.IsVisible = false;//그래프 타이틀이 보기싫으면 false. default는 true;
+            attitude_graph.XAxis.Type = AxisType.Linear;
+            line_roll = attitude_graph.AddCurve("EXAMPLE", pointRoll, Color.Yellow, SymbolType.None);
+
+            line_roll.Line.Width = lineWidth;
+            line_roll.Symbol.Fill = new Fill(Color.Black);
+
+            attitude_graph.XAxis.MajorGrid.IsVisible = true;
+            attitude_graph.YAxis.MajorGrid.IsVisible = true;
+            attitude_graph.XAxis.MajorGrid.Color = Color.White;
+            attitude_graph.YAxis.MajorGrid.Color = Color.White;
+
+            attitude_graph.XAxis.ResetAutoScale(attitude_graph, CreateGraphics());
+            attitude_graph.YAxis.ResetAutoScale(attitude_graph, CreateGraphics());
+
+            attitude_graph.Chart.Fill = new Fill(Color.Black);
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+
         }
 
         private void btnLoadIntoMap_Click(object sender, EventArgs e)
@@ -116,6 +134,7 @@ namespace INAV_GCS
         {
             //int ReceiveData = serialPort1.ReadByte();  //시리얼 버터에 수신된 데이타를 ReceiveData 읽어오기
             //richTextBox_received.Text = richTextBox_received.Text + string.Format("{0:X2}", ReceiveData);  //int 형식을 string형식으로 변환하여 출력
+
             float[] attitude = new float[4];
             try
             {
@@ -133,14 +152,18 @@ namespace INAV_GCS
                         text_yaw.Text = attitude[2].ToString();
                         data.dataRecive(buff, iRecSize);
 
-                        //PointPair temp = new PointPair(time, attitude[1]);
+                        pointRoll.Add(cnt, attitude[0]);
+                        line_roll = attitude_graph.AddCurve("EXAMPLE", pointRoll, Color.Yellow);
 
-                        //pointRoll.Add(temp);
+                        //pointPitch.Add(cnt, attitude[1]);
+                        //line_pitch = attitude_graph.AddCurve("EXAMPLE", pointPitch, Color.Black);
 
+                       //pointYaw.Add(cnt, attitude[2]);
+                       //line_yaw = attitude_graph.AddCurve("EXAMPLE", pointYaw, Color.Blue);
+                        cnt++;
+                        attitude_graph.XAxis.ResetAutoScale(attitude_graph, CreateGraphics());
+                        attitude_graph.YAxis.ResetAutoScale(attitude_graph, CreateGraphics());
 
-                        // auto-axis and update the display
-                        zedGraphControl1.GraphPane.XAxis.ResetAutoScale(zedGraphControl1.GraphPane, CreateGraphics());
-                        zedGraphControl1.GraphPane.YAxis.ResetAutoScale(zedGraphControl1.GraphPane, CreateGraphics());
                         zedGraphControl1.Refresh();
 
                         if (this.CB_Enable_Terminal.Checked && this.radioButton_ASCII.Checked)
