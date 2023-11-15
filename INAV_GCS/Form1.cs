@@ -15,7 +15,10 @@ namespace INAV_GCS
     public partial class Form1 : Form
     {
         UTF8 UTF8 = new UTF8();
+
+        float[] attitude = new float[4];
         DataPassing data = new DataPassing();
+
         GMapOverlay markers = new GMapOverlay("markers");
 
         GraphPane attitude_graph = new GraphPane();
@@ -31,30 +34,45 @@ namespace INAV_GCS
         {
             InitializeComponent();
 
-            int lineWidth = 2;
-
             attitude_graph = zedGraphControl1.GraphPane;
+
+            // clear old curves
+            attitude_graph.CurveList.Clear();
 
             attitude_graph.Title.Text = "EXAMPLE FOR ZEDGRAPH";
             //exampleGraphPane.Title.IsVisible = false;//그래프 타이틀이 보기싫으면 false. default는 true;
-            attitude_graph.XAxis.Type = AxisType.Linear;
-            line_roll = attitude_graph.AddCurve("EXAMPLE", pointRoll, Color.Yellow, SymbolType.None);
 
-            line_roll.Line.Width = lineWidth;
-            line_roll.Symbol.Fill = new Fill(Color.Black);
+            attitude_graph.XAxis.Title.Text = "Time (1s)";
+            attitude_graph.XAxis.Scale.MinorStep = 1;    //작은 눈금 
+            attitude_graph.XAxis.Scale.MajorStep = 10;   //큰 눈금
+            attitude_graph.XAxis.Scale.Min = 0;
+            //attitude_graph.XAxis.Scale.Max = 100;
+            attitude_graph.YAxis.Title.Text = "Angle";
+            attitude_graph.YAxis.Scale.MinorStep = 1;
+            attitude_graph.YAxis.Scale.MajorStep = 10;
+            attitude_graph.YAxis.Scale.Min = -100;
+            attitude_graph.YAxis.Scale.Max = 100;
+
+            /**********눈금 색**********/
+            attitude_graph.XAxis.MajorTic.Color = Color.Orange;
+            attitude_graph.YAxis.MajorTic.Color = Color.Orange;
+
+            attitude_graph.XAxis.Type = AxisType.Linear;
+            line_roll = attitude_graph.AddCurve("Roll_Angle", pointRoll, Color.Yellow, SymbolType.None);
+            line_pitch = attitude_graph.AddCurve("Pitch_Angle", pointPitch, Color.Blue, SymbolType.None);
+            //line_yaw = attitude_graph.AddCurve("Yaw_Angle", pointYaw, Color.White, SymbolType.None);
 
             attitude_graph.XAxis.MajorGrid.IsVisible = true;
             attitude_graph.YAxis.MajorGrid.IsVisible = true;
             attitude_graph.XAxis.MajorGrid.Color = Color.White;
             attitude_graph.YAxis.MajorGrid.Color = Color.White;
 
-            attitude_graph.XAxis.ResetAutoScale(attitude_graph, CreateGraphics());
-            attitude_graph.YAxis.ResetAutoScale(attitude_graph, CreateGraphics());
+            //attitude_graph.XAxis.ResetAutoScale(attitude_graph, CreateGraphics());
+            //attitude_graph.YAxis.ResetAutoScale(attitude_graph, CreateGraphics());
 
             attitude_graph.Chart.Fill = new Fill(Color.Black);
             zedGraphControl1.AxisChange();
             zedGraphControl1.Invalidate();
-
         }
 
         private void btnLoadIntoMap_Click(object sender, EventArgs e)
@@ -108,7 +126,7 @@ namespace INAV_GCS
             if (!serialPort1.IsOpen)  //시리얼포트가 열려 있지 않으면
             {
                 serialPort1.PortName = comboBox_port.Text;  //콤보박스의 선택된 COM포트명을 시리얼포트명으로 지정
-                serialPort1.BaudRate = 9600;  //보레이트 변경이 필요하면 숫자 변경하기
+                serialPort1.BaudRate = 115200;  //보레이트 변경이 필요하면 숫자 변경하기
                 serialPort1.DataBits = 8;
                 serialPort1.StopBits = StopBits.One;
                 serialPort1.Parity = Parity.None;
@@ -118,6 +136,7 @@ namespace INAV_GCS
 
                 label_status.Text = "포트가 열렸습니다.";
                 comboBox_port.Enabled = false;  //COM포트설정 콤보박스 비활성화
+                timer1.Start();
             }
             else  //시리얼포트가 열려 있으면
             {
@@ -134,8 +153,6 @@ namespace INAV_GCS
         {
             //int ReceiveData = serialPort1.ReadByte();  //시리얼 버터에 수신된 데이타를 ReceiveData 읽어오기
             //richTextBox_received.Text = richTextBox_received.Text + string.Format("{0:X2}", ReceiveData);  //int 형식을 string형식으로 변환하여 출력
-
-            float[] attitude = new float[4];
             try
             {
                 int iRecSize = serialPort1.BytesToRead; // 수신된 데이터 갯수
@@ -151,20 +168,6 @@ namespace INAV_GCS
                         text_pitch.Text = attitude[1].ToString();
                         text_yaw.Text = attitude[2].ToString();
                         data.dataRecive(buff, iRecSize);
-
-                        pointRoll.Add(cnt, attitude[0]);
-                        line_roll = attitude_graph.AddCurve("EXAMPLE", pointRoll, Color.Yellow);
-
-                        //pointPitch.Add(cnt, attitude[1]);
-                        //line_pitch = attitude_graph.AddCurve("EXAMPLE", pointPitch, Color.Black);
-
-                       //pointYaw.Add(cnt, attitude[2]);
-                       //line_yaw = attitude_graph.AddCurve("EXAMPLE", pointYaw, Color.Blue);
-                        cnt++;
-                        attitude_graph.XAxis.ResetAutoScale(attitude_graph, CreateGraphics());
-                        attitude_graph.YAxis.ResetAutoScale(attitude_graph, CreateGraphics());
-
-                        zedGraphControl1.Refresh();
 
                         if (this.CB_Enable_Terminal.Checked && this.radioButton_ASCII.Checked)
                         {
@@ -243,6 +246,29 @@ namespace INAV_GCS
                 markers.Markers.Add(marker);
                 map.Overlays.Add(markers);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pointRoll.Add(cnt, attitude[0]);
+            pointPitch.Add(cnt, attitude[1]);
+            //pointYaw.Add(cnt, attitude[2]);
+
+            cnt++;
+            if(cnt % 10000 == 1)
+            {
+                pointRoll.Clear();
+                pointPitch.Clear();
+            }
+
+            //attitude_graph.XAxis.ResetAutoScale(attitude_graph, CreateGraphics());
+            //attitude_graph.YAxis.ResetAutoScale(attitude_graph, CreateGraphics());
+
+            //zedGraphControl1.Refresh();
+
+            attitude_graph.AxisChange();
+            zedGraphControl1.Invalidate();
+
         }
     }
 }

@@ -125,7 +125,6 @@ D:\Project\INAV_GCS\INAV_GCS\bin\Debug\tr\ZedGraph.resources.dll
 D:\Project\INAV_GCS\INAV_GCS\bin\Debug\zh-cn\ZedGraph.resources.dll
 D:\Project\INAV_GCS\INAV_GCS\bin\Debug\zh-tw\ZedGraph.resources.dll
 D:\Project\INAV_GCS\INAV_GCS\obj\Debug\INAV_GCS.csproj.AssemblyReference.cache
-D:\Project\INAV_GCS\INAV_GCS\obj\Debug\INAV_GCS.csproj.SuggestedBindingRedirects.cache
 D:\Project\INAV_GCS\INAV_GCS\obj\Debug\INAV_GCS.Form1.resources
 D:\Project\INAV_GCS\INAV_GCS\obj\Debug\INAV_GCS.Properties.Resources.resources
 D:\Project\INAV_GCS\INAV_GCS\obj\Debug\INAV_GCS.csproj.GenerateResource.cache

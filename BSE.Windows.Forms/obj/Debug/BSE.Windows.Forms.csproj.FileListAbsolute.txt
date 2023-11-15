@@ -22,3 +22,15 @@ C:\Users\jjins\Documents\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Window
 C:\Users\jjins\Documents\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.csproj.CoreCompileInputs.cache
 C:\Users\jjins\Documents\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.dll
 C:\Users\jjins\Documents\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.pdb
+D:\Project\INAV_GCS\BSE.Windows.Forms\bin\Debug\BSE.Windows.Forms.XML
+D:\Project\INAV_GCS\BSE.Windows.Forms\bin\Debug\BSE.Windows.Forms.dll
+D:\Project\INAV_GCS\BSE.Windows.Forms\bin\Debug\BSE.Windows.Forms.pdb
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.csproj.AssemblyReference.cache
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.Properties.Resources.resources
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.Panel.resources
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.XPanderPanel.resources
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.XPanderPanelList.resources
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.csproj.GenerateResource.cache
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.csproj.CoreCompileInputs.cache
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.dll
+D:\Project\INAV_GCS\BSE.Windows.Forms\obj\Debug\BSE.Windows.Forms.pdb

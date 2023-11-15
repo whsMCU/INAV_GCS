@@ -501,6 +501,11 @@
             this.text_yaw.Size = new System.Drawing.Size(100, 21);
             this.text_yaw.TabIndex = 32;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
