@@ -98,6 +98,7 @@
             this.panel1.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
             this.panel1.ShowCloseIcon = true;
             this.panel1.ShowExpandIcon = true;
+            this.panel1.ShowXPanderPanelProfessionalStyle = true;
             this.panel1.Size = new System.Drawing.Size(1197, 351);
             this.panel1.TabIndex = 1;
             this.panel1.Text = "Menu";
@@ -158,10 +159,11 @@
             this.xPanderPanel1.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.xPanderPanel1.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.xPanderPanel1.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.xPanderPanel1.Expand = true;
             this.xPanderPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel1.Image = null;
             this.xPanderPanel1.Name = "xPanderPanel1";
-            this.xPanderPanel1.Size = new System.Drawing.Size(1197, 25);
+            this.xPanderPanel1.Size = new System.Drawing.Size(1197, 272);
             this.xPanderPanel1.TabIndex = 0;
             this.xPanderPanel1.Text = "시리얼포트";
             this.xPanderPanel1.ToolTipTextCloseIcon = null;
@@ -321,11 +323,10 @@
             this.xPanderPanel2.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
-            this.xPanderPanel2.Expand = true;
             this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
-            this.xPanderPanel2.Size = new System.Drawing.Size(1197, 272);
+            this.xPanderPanel2.Size = new System.Drawing.Size(1197, 25);
             this.xPanderPanel2.TabIndex = 1;
             this.xPanderPanel2.Text = "그래프";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
@@ -427,6 +428,7 @@
             // 
             // map
             // 
+            this.map.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.map.Bearing = 0F;
             this.map.CanDragMap = true;
             this.map.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -457,6 +459,7 @@
             // 
             this.text_roll.Location = new System.Drawing.Point(956, 39);
             this.text_roll.Name = "text_roll";
+            this.text_roll.ReadOnly = true;
             this.text_roll.Size = new System.Drawing.Size(100, 21);
             this.text_roll.TabIndex = 27;
             // 
@@ -481,7 +484,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(954, 124);
+            this.label5.Location = new System.Drawing.Point(956, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 12);
             this.label5.TabIndex = 30;
@@ -491,6 +494,7 @@
             // 
             this.text_pitch.Location = new System.Drawing.Point(956, 87);
             this.text_pitch.Name = "text_pitch";
+            this.text_pitch.ReadOnly = true;
             this.text_pitch.Size = new System.Drawing.Size(100, 21);
             this.text_pitch.TabIndex = 31;
             // 
@@ -498,6 +502,7 @@
             // 
             this.text_yaw.Location = new System.Drawing.Point(956, 139);
             this.text_yaw.Name = "text_yaw";
+            this.text_yaw.ReadOnly = true;
             this.text_yaw.Size = new System.Drawing.Size(100, 21);
             this.text_yaw.TabIndex = 32;
             // 
